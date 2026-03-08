@@ -1,0 +1,49 @@
+/* Genaro Landscape — Full Stylesheet */
+/* Critical styles are inlined in <head>. This file handles non-critical styles. */
+
+/* Scroll target offset for fixed nav */
+[id] { scroll-margin-top: 80px; }
+
+/* Nav scrolled state */
+nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+
+/* Services section BG alternation */
+#services { background: #fff; }
+
+/* Yelp link styling */
+.footer-col a[href*="yelp"] { color: rgba(255,255,255,0.7); }
+.footer-col a[href*="yelp"]:hover { color: #ff1a1a; }
+
+/* Form success message */
+.form-success {
+  display: none;
+  background: #e8f5e9;
+  border: 1px solid #a0cf4f;
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: center;
+  color: #026e35;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.form-success.show { display: block; }
+
+/* Promo banner link */
+.promo-banner a { color: #fff; text-decoration: underline; }
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 1rem;
+  background: var(--green);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 700;
+  z-index: 999;
+}
+.skip-link:focus { left: 1rem; }
+
+/* Map embed (if added later) */
+.map-embed { border-radius: 12px; overflow: hidden; }

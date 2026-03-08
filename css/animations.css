@@ -1,0 +1,74 @@
+/* Genaro Landscape — Animations */
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.services-grid .service-card:nth-child(1) { transition-delay: 0s; }
+.services-grid .service-card:nth-child(2) { transition-delay: 0.1s; }
+.services-grid .service-card:nth-child(3) { transition-delay: 0.2s; }
+.services-grid .service-card:nth-child(4) { transition-delay: 0.3s; }
+.testimonials-grid .testimonial-card:nth-child(1) { transition-delay: 0s; }
+.testimonials-grid .testimonial-card:nth-child(2) { transition-delay: 0.12s; }
+.testimonials-grid .testimonial-card:nth-child(3) { transition-delay: 0.24s; }
+
+/* Hero content entrance */
+.hero-content {
+  animation: heroIn 0.9s ease both;
+}
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger open state */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* CTA pulse on hero */
+.btn-primary {
+  animation: ctaPulse 3s ease-in-out 2s infinite;
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(3,145,70,0); }
+  50% { box-shadow: 0 0 0 8px rgba(3,145,70,0.15); }
+}
+
+/* Service card image zoom on hover */
+.service-card img {
+  transition: transform 0.4s ease;
+}
+.service-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Nav link underline animation */
+.nav-links a:not(.nav-cta) {
+  position: relative;
+}
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--green);
+  transition: width 0.25s ease;
+}
+.nav-links a:not(.nav-cta):hover::after {
+  width: 100%;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .hero-content, .btn-primary { animation: none; transition: none; }
+  .reveal { opacity: 1; transform: none; }
+}

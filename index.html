@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genaro Landscape | Huntington Beach Landscaping Company</title>
+  <meta name="description" content="Genaro Landscape is a local landscaping service company based in Huntington Beach. We offer affordable yard, lawn care and garden maintenance.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Genaro Landscape | Huntington Beach Landscaping Company">
+  <meta property="og:description" content="Owner-operated landscaping serving Huntington Beach, Newport Beach & Costa Mesa since 1999. Lawn care, landscape design, tree trimming & sprinkler services.">
+  <meta property="og:image" content="https://genaro-landscape-site.vercel.app/assets/images/hero-lawn.webp">
+  <meta property="og:url" content="https://genaro-landscape-site.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico">
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="assets/images/hero-lawn.webp">
+
+  <!-- Non-blocking Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"></noscript>
+
+  <!-- Critical inline CSS -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #039146;
+      --green-light: #a0cf4f;
+      --green-dark: #026e35;
+      --text: #1f1f26;
+      --text-muted: #4f4f56;
+      --bg-light: #f7f9f4;
+      --white: #ffffff;
+      --footer-bg: #1a2e1a;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+    }
+
+    /* ---- NAV ---- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+      transition: box-shadow 0.3s;
+    }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green); color: var(--white) !important;
+      padding: 0.55rem 1.25rem; border-radius: 6px;
+      font-weight: 600 !important; transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; color: var(--white) !important; }
+
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+
+    /* ---- HERO ---- */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('assets/images/hero-lawn.webp');
+      background-size: cover; background-position: center;
+      filter: brightness(0.45);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 800px; padding: 2rem 2rem 2rem 4rem;
+      color: var(--white);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--green-light); color: var(--text);
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.35rem 0.85rem;
+      border-radius: 4px; margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.15; margin-bottom: 1rem; color: var(--white);
+    }
+    .hero p {
+      font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;
+      max-width: 560px; color: var(--white);
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green); color: var(--white);
+      padding: 0.85rem 1.75rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); color: var(--white); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 2px solid rgba(255,255,255,0.75); color: var(--white);
+      padding: 0.85rem 1.75rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 1rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); color: var(--white); }
+
+    /* ---- PROMO BANNER ---- */
+    .promo-banner {
+      background: var(--green); color: var(--white);
+      text-align: center; padding: 0.85rem 1rem;
+      font-weight: 600; font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* ---- SECTIONS ---- */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      color: var(--green); font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+      line-height: 1.2; margin-bottom: 1rem; color: var(--text);
+    }
+    .section-sub { color: var(--text-muted); font-size: 1.1rem; max-width: 580px; margin-bottom: 3rem; }
+
+    /* ---- SERVICES GRID ---- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.75rem;
+    }
+    .service-card {
+      background: var(--white); border: 1px solid #e5ede8;
+      border-radius: 12px; overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(3,145,70,0.12); transform: translateY(-4px); }
+    .service-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .service-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text); }
+    .service-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+
+    /* ---- ABOUT ---- */
+    .about-section { background: var(--bg-light); }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .about-img { border-radius: 12px; overflow: hidden; }
+    .about-img img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .about-text .section-sub { margin-bottom: 2rem; }
+    .values-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.25rem; margin-top: 2rem;
+    }
+    .value-item { background: var(--white); border-radius: 10px; padding: 1.25rem; }
+    .value-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.4rem; }
+    .value-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* ---- TESTIMONIALS ---- */
+    .testimonials-section { background: var(--white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+    .testimonial-card {
+      background: var(--bg-light); border-radius: 12px;
+      padding: 1.75rem; border-left: 4px solid var(--green);
+    }
+    .stars { color: #f5a623; font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .testimonial-text { font-size: 0.97rem; color: var(--text); line-height: 1.65; margin-bottom: 1rem; font-style: italic; }
+    .testimonial-author { font-weight: 700; color: var(--green-dark); font-size: 0.9rem; }
+    .testimonial-date { color: var(--text-muted); font-size: 0.82rem; }
+
+    /* ---- CONTACT ---- */
+    .contact-section { background: var(--bg-light); }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 4rem; align-items: start;
+    }
+    .contact-info h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; margin-bottom: 1rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 0.85rem; margin-bottom: 1.25rem; }
+    .contact-icon {
+      width: 44px; height: 44px; background: var(--green);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--white); font-size: 1.1rem;
+    }
+    .contact-detail-text strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.15rem; }
+    .contact-detail-text a, .contact-detail-text span { color: var(--text); font-weight: 500; text-decoration: none; }
+    .contact-detail-text a:hover { color: var(--green); text-decoration: underline; }
+
+    /* Form */
+    .contact-form-wrap { background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .contact-form-wrap h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+    input, textarea, select {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1.5px solid #d1d9d3; border-radius: 8px;
+      font-size: 0.95rem; color: var(--text);
+      font-family: inherit; transition: border-color 0.2s;
+      background: var(--white);
+    }
+    input:focus, textarea:focus, select:focus {
+      outline: none; border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(3,145,70,0.1);
+    }
+    textarea { resize: vertical; min-height: 130px; }
+    .form-submit {
+      width: 100%; padding: 1rem;
+      background: var(--green); color: var(--white);
+      border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      font-family: inherit; transition: background 0.2s, transform 0.15s;
+    }
+    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: var(--footer-bg); color: rgba(255,255,255,0.75);
+      padding: 3rem 2rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 2rem;
+    }
+    .footer-brand img { height: 48px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+    .footer-brand p { font-size: 0.9rem; line-height: 1.6; }
+    .footer-col h4 { color: var(--white); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.6rem; }
+    .footer-col ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem; text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .hero-content { padding: 2rem; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0.85rem 1rem; }
+      .nav-links {
+        display: none; position: fixed; inset: 0; top: 64px;
+        background: var(--white); flex-direction: column;
+        align-items: center; justify-content: center; gap: 2rem;
+        z-index: 99;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.2rem; }
+      .hamburger { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      section { padding: 3.5rem 1.25rem; }
+      .hero-content { padding: 1.5rem; }
+    }
+  </style>
+
+  <!-- Non-blocking full stylesheet -->
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+  <!-- Animations -->
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Genaro Landscape",
+    "description": "Owner-operated landscaping service company based in Huntington Beach, CA serving Orange County since 1999.",
+    "url": "https://genaro-landscape-site.vercel.app",
+    "telephone": "(714) 318-0134",
+    "email": "genaroplandscape@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Huntington Beach",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "image": "https://genaro-landscape-site.vercel.app/assets/images/hero-lawn.webp",
+    "openingHours": "Mo-Sa 08:00-18:00",
+    "areaServed": ["Huntington Beach", "Newport Beach", "Costa Mesa", "Orange County"],
+    "foundingDate": "1999",
+    "sameAs": [
+      "https://www.yelp.com/biz/genaro-landscape-huntington-beach"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Main navigation">
+    <a class="nav-logo" href="#home" aria-label="Genaro Landscape home">
+      <img src="assets/images/logo-color.webp" alt="Genaro Landscape logo" width="120" height="62">
+    </a>
+    <ul class="nav-links" id="nav-menu" aria-hidden="true">
+      <li><a href="#services" tabindex="-1">Services</a></li>
+      <li><a href="#about" tabindex="-1">About Us</a></li>
+      <li><a href="#testimonials" tabindex="-1">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta" tabindex="-1">Get a Free Estimate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg" role="img" aria-label="Professional lawn mowing in Huntington Beach"></div>
+      <div class="hero-content">
+        <span class="hero-badge">Serving Orange County Since 1999</span>
+        <h1>Beautiful Landscapes,<br>Unparalleled Quality</h1>
+        <p>Owner-operated landscaping for homes &amp; businesses across Huntington Beach, Newport Beach, and Costa Mesa — at an affordable price.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+          <a href="tel:7143180134" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.6 1.27h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.91a16 16 0 006.09 6.09l.95-1.91a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (714) 318-0134
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMO BANNER -->
+    <div class="promo-banner" role="complementary" aria-label="Promotional offer">
+      🌿 $15 Off Your First Appointment — Mention <strong>"HAPPY LAWN"</strong> when you call!
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Landscaping Services</h2>
+        <p class="section-sub">From weekly lawn care to full landscape design, we handle it all across Orange County.</p>
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <picture>
+              <source srcset="assets/images/lawn-care.webp" type="image/webp">
+              <img src="assets/images/lawn-care.jpg" alt="Lawn care and maintenance service" width="360" height="200" loading="lazy">
+            </picture>
+            <div class="service-card-body">
+              <h3>Lawn Care &amp; Maintenance</h3>
+              <p>We design new, renovate old or work with existing landscape for home and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding coastal Orange County areas.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <picture>
+              <source srcset="assets/images/landscape-design.webp" type="image/webp">
+              <img src="assets/images/landscape-design.jpg" alt="Landscape design and planting" width="360" height="200" loading="lazy">
+            </picture>
+            <div class="service-card-body">
+              <h3>Landscape Design &amp; Planting</h3>
+              <p>We design new, renovate old or work with existing landscape for home and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding coastal Orange County areas.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <picture>
+              <source srcset="assets/images/tree-trimming.webp" type="image/webp">
+              <img src="assets/images/tree-trimming.jpg" alt="Tree trimming and removal service" width="360" height="200" loading="lazy">
+            </picture>
+            <div class="service-card-body">
+              <h3>Tree Trimming &amp; Removal</h3>
+              <p>We offer a wide variety of tree care and maintenance services for residential and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding areas.</p>
+            </div>
+          </article>
+
+          <article class="service-card reveal">
+            <picture>
+              <source srcset="assets/images/sprinkler.webp" type="image/webp">
+              <img src="assets/images/sprinkler.jpg" alt="Sprinkler system installation and repair" width="360" height="200" loading="lazy">
+            </picture>
+            <div class="service-card-body">
+              <h3>Sprinkler System Services</h3>
+              <p>We offer professional installation and repair services for in-ground lawn sprinkler systems for residential and commercial customers in Huntington Beach, Newport Beach, Costa Mesa and surrounding areas.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-inner">
+          <div class="about-img reveal">
+            <picture>
+              <source srcset="assets/images/best-lawn-care.webp" type="image/webp">
+              <img src="assets/images/best-lawn-care.jpg" alt="Genaro Landscape crew at work" width="540" height="420" loading="lazy">
+            </picture>
+          </div>
+          <div class="about-text reveal">
+            <span class="section-label">About Us</span>
+            <h2 class="section-title">25+ Years Serving Orange County</h2>
+            <p class="section-sub">Genaro Landscape is an owner-operated landscaping service company based in Huntington Beach, CA. We have been serving business and residential customers in Orange County with affordable yard work, lawn care, garden maintenance and landscaping services since 1999.</p>
+
+            <div class="values-grid">
+              <div class="value-item">
+                <h4>Garden Care</h4>
+                <p>With our range of lawn &amp; garden care services covering anything you might need, we're proud to be your one-stop provider!</p>
+              </div>
+              <div class="value-item">
+                <h4>Seasoned Team</h4>
+                <p>All of our crew members are experienced pros who find real joy in making any given garden or lawn look nicer!</p>
+              </div>
+              <div class="value-item">
+                <h4>Customer-Oriented</h4>
+                <p>We value our loyal returning customers and always show our appreciation — like a future service discount or a gift.</p>
+              </div>
+              <div class="value-item">
+                <h4>Affordable Price</h4>
+                <p>We aim to make our service as reasonably priced as possible so you get great value every time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <span class="section-label">Customer Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-sub">Real feedback from real Orange County homeowners and businesses.</p>
+        <div class="testimonials-grid">
+
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"Genaro and his team did a great job repairing and replacing sprinklers, removing turf and adding sod and removing overgrown bushes in both our front and back yards. We are extremely happy with their work and we are in love with our front and back yards. I highly recommend these guys and would use their services again."</p>
+            <footer>
+              <span class="testimonial-author">John</span>
+              <span class="testimonial-date"> — June 2020</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"We moved into a new property with a totally empty yard in Huntington Beach. A friend recommended Genaro Landscape. They were on time for all appointments and were very professional and understood what we wanted and designed the perfect space for us. We are happy about the final results and we are hiring their services for weekly maintenance as well."</p>
+            <footer>
+              <span class="testimonial-author">Amy</span>
+              <span class="testimonial-date"> — March 2021</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card reveal">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-text">"I was in the process of remodeling our older home in Garden Grove and was in desperate need of a landscaper to replace trees and install new sod, plants, and irrigation system. Genaro and his crew were a wonderful team to work with! They listened to our ideas and created a plan that both fit our budget and must haves. We are thrilled with the final results. Genaro Landscape is the best!"</p>
+            <footer>
+              <span class="testimonial-author">Mary</span>
+              <span class="testimonial-date"> — February 2022</span>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-info reveal">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Request a Free Estimate</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Call us or send a message and we'll get back to you quickly. Serving Huntington Beach, Newport Beach, Costa Mesa, and surrounding Orange County.</p>
+
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">📞</div>
+              <div class="contact-detail-text">
+                <strong>Phone</strong>
+                <a href="tel:7143180134">(714) 318-0134</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">✉️</div>
+              <div class="contact-detail-text">
+                <strong>Email</strong>
+                <a href="mailto:genaroplandscape@gmail.com">genaroplandscape@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">📍</div>
+              <div class="contact-detail-text">
+                <strong>Service Area</strong>
+                <span>Huntington Beach, Newport Beach, Costa Mesa &amp; surrounding Orange County</span>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">🕐</div>
+              <div class="contact-detail-text">
+                <strong>Hours</strong>
+                <span>Mon–Sat: 8:00am–6:00pm | Sun: Closed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal">
+            <h3>Send Us a Message</h3>
+            <form action="https://formspree.io/f/xyzformspree" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="(714) 000-0000" autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option value="Lawn Care &amp; Maintenance">Lawn Care &amp; Maintenance</option>
+                  <option value="Landscape Design &amp; Planting">Landscape Design &amp; Planting</option>
+                  <option value="Tree Trimming &amp; Removal">Tree Trimming &amp; Removal</option>
+                  <option value="Sprinkler System Services">Sprinkler System Services</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Describe your project or ask a question..."></textarea>
+              </div>
+              <button type="submit" class="form-submit">Send Message →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo-white.webp" alt="Genaro Landscape" width="120" height="62">
+        <p>Owner-operated landscaping serving Huntington Beach and surrounding Orange County since 1999. Unparalleled quality at an affordable price.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Lawn Care &amp; Maintenance</a></li>
+          <li><a href="#services">Landscape Design &amp; Planting</a></li>
+          <li><a href="#services">Tree Trimming &amp; Removal</a></li>
+          <li><a href="#services">Sprinkler System Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:7143180134">(714) 318-0134</a></li>
+          <li><a href="mailto:genaroplandscape@gmail.com">genaroplandscape@gmail.com</a></li>
+          <li><a href="https://www.yelp.com/biz/genaro-landscape-huntington-beach" target="_blank" rel="noopener noreferrer">View Us on Yelp</a></li>
+          <li><a href="#contact">Free Estimate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Genaro Landscape. All rights reserved. | Huntington Beach, CA</p>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "business_name": "Genaro Landscape",
+  "tagline": "Unparalleled quality at an affordable price",
+  "phone": "(714) 318-0134",
+  "email": "genaroplandscape@gmail.com",
+  "address": "Huntington Beach, CA",
+  "hours": "Mon–Sat 8:00am–6:00pm | Sun: Closed",
+  "founded": "1999",
+  "service_area": "Huntington Beach, Newport Beach, Costa Mesa, and surrounding coastal Orange County",
+  "services": [
+    {
+      "name": "Lawn Care & Maintenance",
+      "description": "We design new, renovate old or work with existing landscape for home and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding coastal Orange County areas.",
+      "image": "assets/images/lawn-care.webp"
+    },
+    {
+      "name": "Landscape Design & Planting",
+      "description": "We design new, renovate old or work with existing landscape for home and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding coastal Orange County areas.",
+      "image": "assets/images/landscape-design.webp"
+    },
+    {
+      "name": "Tree Trimming & Removal",
+      "description": "We offer a wide variety of tree care and maintenance services for residential and business in Huntington Beach, Newport Beach, Costa Mesa and surrounding areas.",
+      "image": "assets/images/tree-trimming.webp"
+    },
+    {
+      "name": "Sprinkler System Services",
+      "description": "We offer professional installation and repair services for in-ground lawn sprinkler systems for residential and commercial customers in Huntington Beach, Newport Beach, Costa Mesa and surrounding areas.",
+      "image": "assets/images/sprinkler.webp"
+    }
+  ],
+  "about_text": "Genaro Landscape is an owner-operated landscaping service company based in Huntington Beach, CA. We have been serving business and residential customers in Orange County with affordable yard work, lawn care, garden maintenance and landscaping services since 1999.",
+  "value_propositions": [
+    {
+      "title": "Garden Care",
+      "description": "With our range of lawn & garden care services covering anything you might need, we're proud to be your one-stop provider!"
+    },
+    {
+      "title": "Seasoned Team",
+      "description": "All of our crew members are experienced pros who find real joy in making any given garden or lawn look nicer!"
+    },
+    {
+      "title": "Customer-Oriented Service",
+      "description": "We value the service we provide and our loyal returning customers can always expect some appreciation from us, like a future service discount or a gift."
+    },
+    {
+      "title": "Affordable Price",
+      "description": "We aim to make our service as reasonably priced as possible."
+    }
+  ],
+  "promo": "$15 Off On Your First Appointment — JUST MENTION 'HAPPY LAWN'",
+  "testimonials": [
+    {
+      "name": "John",
+      "date": "June 1, 2020",
+      "text": "Genaro and his team did a great job repairing and replacing sprinklers, removing turf and adding sod and removing overgrown bushes in both our front and back yards. We are extremely happy with their work and we are in love with our front and back yards. I highly recommend these guys and would use their services again."
+    },
+    {
+      "name": "Amy",
+      "date": "March 20, 2021",
+      "text": "We moved into a new property with a totally empty yard in Huntington Beach. A friend recommended Genaro Landscape. They were on time for all appointments and were very professional and understood what we wanted and designed the perfect space for us. We are happy about the final results and we are hiring their services for weekly maintenance as well."
+    },
+    {
+      "name": "Mary",
+      "date": "February 13, 2022",
+      "text": "I was in the process of remodeling our older home in Garden Grove and was in desperate need of a landscaper to replace trees and install new sod, plants, and irrigation system. Genaro and his crew were a wonderful team to work with! They listened to our ideas and created a plan that both fit our budget and must haves. We are thrilled with the final results. Genaro Landscape is the best!"
+    }
+  ],
+  "social_links": {
+    "yelp": "https://www.yelp.com/biz/genaro-landscape-huntington-beach",
+    "google_maps": "https://goo.gl/maps/5Gi83UhL6PxoFUGE9"
+  },
+  "brand_colors": {
+    "primary": "#a0cf4f",
+    "dark": "#039146",
+    "light": "#56c477",
+    "text_dark": "#1f1f26",
+    "text_gray": "#4f4f56",
+    "footer_bg": "#242424"
+  },
+  "images_downloaded": [
+    "assets/images/hero-lawn.webp",
+    "assets/images/best-lawn-care.webp",
+    "assets/images/lawn-care.webp",
+    "assets/images/landscape-design.webp",
+    "assets/images/tree-trimming.webp",
+    "assets/images/sprinkler.webp",
+    "assets/images/logo-color.webp",
+    "assets/images/logo-white.webp"
+  ]
+}
